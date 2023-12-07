@@ -1,9 +1,17 @@
 cmake_minimum_required(VERSION 3.26)
-project(lib_NMEA_0183 C)
+project(main_PS)
 
-set(CMAKE_C_STANDARD 99)
+# 设置 C++ 标准
+set(CMAKE_CXX_STANDARD 17)
 
-add_executable(lib_NMEA_0183 main.c
-        c/NMEA_0183_lib.c
-        c/NMEA_0183_lib.h
-        data_target_RS485.h)
+set(BUILD_SHARED_LIBS OFF)
+
+
+add_executable(main_PS
+        main.h
+        main.cpp
+        Beidou/NMEA_0183_lib.cpp
+        example/example.cpp
+        example/example.h
+)
+
